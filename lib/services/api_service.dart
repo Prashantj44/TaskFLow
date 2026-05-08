@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String _quoteUrl = 'https://api.quotable.io/random';
+  static const String _quoteUrl = 'https://dummyjson.com/quotes/random';
 
   Future<Map<String, String>> fetchQuote() async {
     try {
@@ -10,7 +10,7 @@ class ApiService {
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         return {
-          'quote': data['content'],
+          'quote': data['quote'],
           'author': data['author'],
         };
       } else {
