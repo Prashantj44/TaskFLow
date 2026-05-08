@@ -1,4 +1,4 @@
-# Flutter Task Manager App
+# TaskFlow
 
 This is a Flutter Task Manager application built for the Flutter Development Internship assignment.
 
