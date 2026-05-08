@@ -1,52 +1,60 @@
-# Flutter Task Manager App
+# 🚀 TaskFlow: Premium Task Management App
 
-This is a Flutter Task Manager application built for the Flutter Development Internship assignment.
+TaskFlow is a modern, feature-rich task management application built with **Flutter** and **Firebase**. This project was developed as part of a high-performance Flutter Development Internship assignment, focusing on clean architecture, premium UI/UX, and robust backend integration.
 
-## Features
-- **User Authentication:** Firebase Auth (Sign up, Login, Logout)
-- **Task Management:** Cloud Firestore (Add, Edit, Delete, Mark as Completed)
-- **REST API Integration:** Fetches and displays a random motivational quote from `api.quotable.io/random`.
-- **UI & State Management:** Clean UI, proper form validation, loading states, and error handling.
+## ✨ Key Features
 
-## Requirements
-- Flutter SDK
-- Android Studio / VS Code
-- A Firebase Project
+- **🔐 Secure Authentication:** Seamless Sign-up and Login flow powered by Firebase Auth.
+- **☁️ Real-time Synchronization:** CRUD operations (Create, Read, Update, Delete) synced instantly with Cloud Firestore.
+- **💡 Motivational Quotes:** Integrated with a REST API to provide daily inspiration directly in your task dashboard.
+- **🎨 Premium UI/UX:** Built with a custom design system using Google Fonts (Inter), custom circular progress indicators, and smooth transitions.
+- **✅ Status Tracking:** Easily manage task lifecycle with "Pending" and "Completed" states.
+- **📅 Smart Date Selection:** Integrated date picker for organized task scheduling.
 
-## Setup Steps
-1. Clone the repository.
-2. Run `flutter pub get` to install the dependencies.
-3. Setup Firebase for this project:
-   - Create a Firebase project in the [Firebase Console](https://console.firebase.google.com/).
-   - Enable **Authentication** (Email/Password).
-   - Enable **Firestore Database** (start in test mode for development).
-   - Add an Android App to your Firebase project and download `google-services.json`. Place it in the `android/app/` directory.
-   - Add an iOS App (if needed) and place the `GoogleService-Info.plist` in `ios/Runner/`.
-4. Run the app:
+## 🛠️ Tech Stack
+
+- **Framework:** Flutter
+- **Database:** Cloud Firestore
+- **Auth:** Firebase Authentication
+- **API:** [Quotable REST API](https://api.quotable.io/random)
+- **State Management:** Stream-based reactive UI
+
+## 📂 Project Structure
+
+The project follows a clean, modular architecture:
+
+```text
+lib/
+├── models/         # Data structures and serialization
+├── screens/        # UI Views and screen-specific logic
+├── services/       # External integrations (Auth, Firestore, API)
+└── main.dart       # Application entry point & Global Theme
+```
+
+## 🚀 Quick Start
+
+1. **Clone & Install:**
+   ```bash
+   git clone <your-repo-url>
+   flutter pub get
+   ```
+
+2. **Firebase Setup:**
+   - Configure `google-services.json` in `android/app/`.
+   - Enable **Firestore** and **Auth** in your Firebase Console.
+
+3. **Launch:**
    ```bash
    flutter run
    ```
 
-## Folder Structure
-```
-lib/
-├── screens/
-│   ├── login_screen.dart
-│   ├── signup_screen.dart
-│   ├── home_screen.dart
-│   └── add_edit_task_screen.dart
-├── services/
-│   ├── auth_service.dart
-│   ├── firestore_service.dart
-│   └── api_service.dart
-├── models/
-│   └── task_model.dart
-├── widgets/
-└── main.dart
-```
+---
 
-## Demo Video
-*(Insert Link to Demo Video Here)*
+## 📽️ Demo Video
+[Click here to watch the demo](*(Insert your link here)*)
 
-## APK File
-*(Insert Link to APK File or mention it is in the releases/build folder)*
+## 📦 APK Download
+[Download TaskFlow APK](https://github.com/Prashantj44/TaskFLow/releases/download/v1.0.0/app-release.apk)
+
+---
+*Developed with ❤️ as an Internship Project*
