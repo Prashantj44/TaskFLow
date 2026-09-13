@@ -15,13 +15,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TaskFlow',
+      title: 'TaskFlow AI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color(0xFF4F46E5), // Indigo
-          background: Color(0xFFF9FAFB),
+          seedColor: Color(0xFF6366F1), // Indigo
+          primary: Color(0xFF4F46E5),
+          secondary: Color(0xFFEC4899),
+          surface: Colors.white,
+          background: Color(0xFFF8FAFC),
         ),
         textTheme: GoogleFonts.interTextTheme(
           Theme.of(context).textTheme,
@@ -29,12 +32,12 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          centerTitle: true,
-          iconTheme: IconThemeData(color: Color(0xFF1F2937)),
-          titleTextStyle: GoogleFonts.inter(
-            color: Color(0xFF1F2937),
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
+          centerTitle: false,
+          iconTheme: IconThemeData(color: Color(0xFF0F172A)),
+          titleTextStyle: GoogleFonts.outfit(
+            color: Color(0xFF0F172A),
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
           ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
             foregroundColor: Colors.white,
             elevation: 2,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(14),
             ),
             padding: EdgeInsets.symmetric(vertical: 16),
           ),
@@ -68,7 +71,10 @@ class AuthStateHandler extends StatelessWidget {
           return HomeScreen();
         }
         return Scaffold(
-          body: Center(child: CircularProgressIndicator(color: Color(0xFF4F46E5))),
+          backgroundColor: Color(0xFFF8FAFC),
+          body: Center(
+            child: CircularProgressIndicator(color: Color(0xFF6366F1)),
+          ),
         );
       },
     );

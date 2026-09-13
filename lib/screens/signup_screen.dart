@@ -44,6 +44,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF8FAFC),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
@@ -52,23 +53,43 @@ class _SignupScreenState extends State<SignupScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(height: 60),
-                Icon(Icons.person_add_alt_1_rounded, size: 80, color: Color(0xFF4F46E5)),
+                SizedBox(height: 50),
+                Center(
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Color(0xFF6366F1), Color(0xFFEC4899)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.circular(24),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xFF6366F1).withOpacity(0.3),
+                          blurRadius: 20,
+                          offset: Offset(0, 10),
+                        ),
+                      ],
+                    ),
+                    child: Icon(Icons.person_add_rounded, size: 48, color: Colors.white),
+                  ),
+                ),
                 SizedBox(height: 24),
                 Text(
-                  'Create Account',
-                  style: GoogleFonts.inter(
-                    fontSize: 28,
+                  'Join TaskFlow AI',
+                  style: GoogleFonts.outfit(
+                    fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF1F2937),
+                    color: Color(0xFF0F172A),
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: 6),
                 Text(
-                  'Sign up to get started',
+                  'Create an account to unlock AI task automation',
                   style: GoogleFonts.inter(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: Colors.grey.shade600,
                   ),
                   textAlign: TextAlign.center,
@@ -83,8 +104,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     filled: true,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
                     ),
                   ),
                   validator: (val) => val!.isEmpty ? 'Enter an email' : null,
@@ -100,15 +121,15 @@ class _SignupScreenState extends State<SignupScreen> {
                     filled: true,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
                     ),
                   ),
                   validator: (val) => val!.length < 6 ? 'Password too short' : null,
                 ),
                 SizedBox(height: 32),
                 _isLoading
-                    ? Center(child: CircularProgressIndicator(color: Color(0xFF4F46E5)))
+                    ? Center(child: CircularProgressIndicator(color: Color(0xFF6366F1)))
                     : ElevatedButton(
                         onPressed: _signup,
                         child: Text(

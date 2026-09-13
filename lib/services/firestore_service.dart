@@ -35,6 +35,19 @@ class FirestoreService {
   }
 
   Future<void> markCompleted(String id, bool status) async {
-    await _taskCollection.doc(id).update({'status': status ? 'completed' : 'pending'});
+    await _taskCollection.doc(id).update({
+      'status': status ? 'completed' : 'pending',
+      'isCompleted': status,
+    });
+  }
+
+  Future<void> updateSubtasks(String id, List<SubTask> subtasks) async {
+    bool allCompleted = subtasks.isNotEmpty && subtasks.every((st) => st.isCompleted);
+    await _taskCollection.doc(id).update({
+      'subtasks': subtasks.map((st) => st.toMap()).toList(),
+      if (allCompleted) 'status': 'completed',
+      if (allCompleted) 'isCompleted': true,
+    });
   }
 }
+
