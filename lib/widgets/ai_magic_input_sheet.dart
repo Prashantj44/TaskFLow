@@ -165,7 +165,7 @@ class _AiMagicInputSheetState extends State<AiMagicInputSheet> {
               : ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF4F46E5),
-                    padding: EdgeInsets.vertical(16),
+                    padding: EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                     elevation: 4,
                   ),

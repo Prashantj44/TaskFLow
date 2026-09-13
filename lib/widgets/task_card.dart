@@ -131,13 +131,13 @@ class _TaskCardState extends State<TaskCard> {
                   child: Wrap(
                     spacing: 8,
                     runSpacing: 6,
-                    cross: WrapCrossAlignment.center,
+                    crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
                       CategoryChip(category: task.category),
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
-                          color: Colors.slate.shade100,
+                          color: Colors.blueGrey.shade50,
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Row(

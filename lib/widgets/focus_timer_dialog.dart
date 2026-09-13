@@ -260,7 +260,7 @@ class _FocusTimerDialogState extends State<FocusTimerDialog> {
                   title: Text(
                     st.title,
                     style: GoogleFonts.inter(
-                      color: st.isCompleted ? Colors.white38 : Colors.white80,
+                      color: st.isCompleted ? Colors.white38 : Colors.white70,
                       decoration: st.isCompleted ? TextDecoration.lineThrough : null,
                       fontSize: 13,
                     ),

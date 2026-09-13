@@ -7,7 +7,6 @@ import '../models/task_model.dart';
 import '../widgets/task_card.dart';
 import '../widgets/ai_magic_input_sheet.dart';
 import '../widgets/ai_assistant_dialog.dart';
-import '../widgets/category_chip.dart';
 import 'login_screen.dart';
 import 'add_edit_task_screen.dart';
 
